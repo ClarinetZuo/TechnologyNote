@@ -24,10 +24,18 @@
 - 并发：一个网站在一段时间的访问量
 - 并行：1000w个用户一起访问一个网站，这个网站的服务器同时处理了1000w个请求，这叫并行
 ## HTTP的结构
-### 请求的规范
+### 请求(request)的规范
 - 一个请求行，若干个标题头，[一个请求体]
 - 请求行：
-  - GET url 协议版本，例如：GET index.jsp HTTP/1.1
+  - GET url 协议版本，例如：GET index.jsp HTTP/1.1(GET方式传递的内容在请求行上) POST(POST方式传递的内容在请求体中，更安全，且请求行有长度限制，当内容很长时，也建议使用POST方式)
 - 消息头：客户端给服务端提供的一些额外信息
 - 请求体：客户端给服务端发送的数据内容
-### 响应
+### 响应(response)的规范
+- 状态行：HTTP/1.1 200 OK
+- 多个消息头(服务端给客户端的)
+- 一个空行
+- 实体内容
+```Java
+Content-Type:text/plain;charset=utf-8 // 这是纯文本
+Content-Type:text/html;charset=utf-8 //这是html
+```
