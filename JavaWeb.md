@@ -40,5 +40,6 @@ Content-Type:text/plain;charset=utf-8 // 这是纯文本
 Content-Type:text/html;charset=utf-8 //这是html
 ```
 ## 环境搭建
-- 开发工具
+- 开发工具(IntelliJ IDEA)
 - Tomcat服务器
+- 
