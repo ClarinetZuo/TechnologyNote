@@ -42,4 +42,15 @@ Content-Type:text/html;charset=utf-8 //这是html
 ## 环境搭建
 - 开发工具(IntelliJ IDEA)
 - Tomcat服务器
-- 
+## Servlet
+- applet：运行在网页里的小程序
+- servlet：运行在服务器端(Tomcat等等)的小程序，作用是用来接收客户的请求，并对客户端进行响应
+- MIDlet
+## Tomcat的目录结构
+### bin：Tomcat的各个命令
+### lib：Tomcat所依赖的jar包
+### config：Tomcat的配置文件
+### logs：工作日志
+### temp：临时文件存储目录
+### webapps：web应用
+### work：jsp文件的工作目录
