@@ -54,3 +54,9 @@ Content-Type:text/html;charset=utf-8 //这是html
 ### temp：临时文件存储目录
 ### webapps：web应用
 ### work：jsp文件的工作目录
+## 什么是Servlet
+- 广义上来说，Servlet是一组规范，包含了与服务端小程序相关的很多API
+- 狭义上来说，Servlet是运行在服务器端(Tomcat)的小程序；它的作用是用来接收客户端的请求，并对客户端做出响应；通常是使用HTTP协议来进行通信
+### 如何开发Servlet
+- 定义一个类，来继承GenericServlet或HttpServlet；重写doGet或者doPost方法
+- 配置Servlet的映射url(可以使用web.xml，也可以使用@WebServlet注解)
