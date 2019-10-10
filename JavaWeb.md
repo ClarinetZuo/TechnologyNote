@@ -60,3 +60,16 @@ Content-Type:text/html;charset=utf-8 //这是html
 ### 如何开发Servlet
 - 定义一个类，来继承GenericServlet或HttpServlet；重写doGet或者doPost方法
 - 配置Servlet的映射url(可以使用web.xml，也可以使用@WebServlet注解)
+- **注意，在使用IDEA自动创建@WebServlet时候，里面的value需要配置好**
+```Java
+@WebServlet(name = "BookServlet",value="/book.do")
+public class BookServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request,response);
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.getWriter().append("Served at : ").append(request.getContextPath());
+    }
+}
+```
