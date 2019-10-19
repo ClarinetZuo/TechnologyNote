@@ -59,7 +59,7 @@ Content-Type:text/html;charset=utf-8 //这是html
 - 狭义上来说，Servlet是运行在服务器端(Tomcat)的小程序；它的作用是用来接收客户端的请求，并对客户端做出响应；通常是使用HTTP协议来进行通信
 ### 如何开发Servlet
 - 定义一个类，来继承GenericServlet或HttpServlet；重写doGet或者doPost方法
-- 配置Servlet的映射url(可以使用web.xml，也可以使用@WebServlet注解)
+- 配置Servlet的映射url(可以使用web.xml(Servlet不能重名)，也可以使用@WebServlet注解)
 - **注意，在使用IDEA自动创建@WebServlet时候，里面的value需要配置好**
 ```Java
 @WebServlet(name = "BookServlet",value="/book.do")
@@ -73,3 +73,10 @@ public class BookServlet extends HttpServlet {
     }
 }
 ```
+### ServletRequest
+- 此接口封装了所有客户端请求数据(请求行、消息头、内容体)；这个对象由容器(Tomcat)创建，并将此对象以参数的形式传递给Servlet的service、doGet、doPost方法；如果我们使用的是HTTP协议，可以使用HttpServletRequest接口
+### HttpServletRequest的常用方法
+- getParameter():根据请求参数名称来获得请求值
+- getParameterNames():获得所有的请求名
+- getParameterMap():获得请求数据的映射
+- getParameterValues():获得多个请求值
