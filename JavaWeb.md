@@ -80,6 +80,10 @@ public class BookServlet extends HttpServlet {
 - getParameterNames():获得所有的请求名
 - getParameterMap():获得请求数据的映射
 - getParameterValues():获得多个请求值
-- **request中文乱码原理及解决方法[Google](https://blog.csdn.net/lxf512666/article/details/52939573)**
+- **request中文乱码原理及解决方法[Google](https://blog.csdn.net/lxf512666/article/details/52939573)**，简单来说，客户端先使用UTF-8编码，再使用ISO-8859-1编码，要想中文不乱码，就要先使用ISO-8859-1解码，再使用UTF-8解码，代码demo如下：
+```Java
+String bookName = request.getParameter("bookname");
+System.out.println("name:" + new String(bookName.getBytes("ISO-8859-1"),"UTF-8"));
+```
 ### ServletResponse
 - response是由容器创建，并以参数的形式返回
