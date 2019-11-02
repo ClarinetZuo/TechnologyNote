@@ -80,3 +80,6 @@ public class BookServlet extends HttpServlet {
 - getParameterNames():获得所有的请求名
 - getParameterMap():获得请求数据的映射
 - getParameterValues():获得多个请求值
+- **request中文乱码原理及解决方法[Google](https://blog.csdn.net/lxf512666/article/details/52939573)**
+### ServletResponse
+- response是由容器创建，并以参数的形式返回
