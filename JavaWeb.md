@@ -86,4 +86,9 @@ String bookName = request.getParameter("bookname");
 System.out.println("name:" + new String(bookName.getBytes("ISO-8859-1"),"UTF-8"));
 ```
 ### ServletResponse
-- response是由容器创建，并以参数的形式返回
+- response是由容器创建，并以参数的形式返回传递给Servlet的service方法，response封装了很多向Client返回响应的方法
+- 主要的方法有：
+  - setContentType():设置向Client返回的数据的类型，setContentType("text/html";charset="UTF-8");
+  - getWriter():获得字符流
+  - getOutputStream();
+  - sendRedirect();重定向
