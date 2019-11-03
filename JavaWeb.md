@@ -92,3 +92,11 @@ System.out.println("name:" + new String(bookName.getBytes("ISO-8859-1"),"UTF-8")
   - getWriter():获得字符流
   - getOutputStream();
   - sendRedirect();重定向
+### Servlet的生命周期
+- 实例化(创建)
+- 初始化(init()方法调用) **在第一次请求之前执行，一个Servlet对象只调用一次init()方法**
+- 提供服务(service() doGet() doPost())
+- 销毁(destroy()) **在服务器移除Servlet时调用，也只调用一次**
+- 垃圾回收
+- init()方法默认是在第一次接受请求时调用，也可以通过设置loadOnStartUp()=正数，来配置是否在服务器启动时调用，1的优先级最高
+### Servlet是由容器创建，每个Servlet只创建一个唯一的实例；而service()是多线程的方法，即多个客户端同时发送请求时，会自动启动多个线程来处理
