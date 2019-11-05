@@ -101,4 +101,24 @@ System.out.println("name:" + new String(bookName.getBytes("ISO-8859-1"),"UTF-8")
 - 注：init()方法默认是在第一次接受请求时调用，也可以通过设置loadOnStartUp()=正数，来配置是否在服务器启动时调用，1的优先级最高
 ### Servlet是由容器创建，每个Servlet只创建一个唯一的实例；而service()是多线程的方法，即多个客户端同时发送请求时，会自动启动多个线程来处理
 ### Tomcat来调用哪个Servlet的service()方法，service的结果返回给Tomcat，由Tomcat返回给客户端
-## 会话跟踪
+## 会话(Session)跟踪
+### 什么是会话
+- 有始有终的一系列动作
+- 一个会话包含了多次请求
+### Servlet中实现Session跟踪机制的方式
+- HttpSession接口
+### 如何获得一个Session
+- Session是由服务器创建的
+- HttpSession session = request.getSession();
+### HttpSession中常用的方法
+- getId():获得这个Session的唯一标识，此id是由Servlet创建的
+- getCreationTime():获得这个Session的创建时间
+- getLastAccessedTime():获得这个最后一次访问的时间
+- getMaxInactiveInterval():获得最大时间间隔
+- setMaxInactiveInterval():获得最大时间间隔
+- isNew():是否是新创建的
+- invalidate():让Session失效
+- setAttribute(String name,Object value):向Session中存值
+- getAttribute(String name):获得Session中的数据
+- removeAttribute(String name):移除Session中的数据
+- getAttributeNames():获得Session中所有数据的绑定名称
