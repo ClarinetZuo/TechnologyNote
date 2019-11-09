@@ -122,3 +122,6 @@ System.out.println("name:" + new String(bookName.getBytes("ISO-8859-1"),"UTF-8")
 - getAttribute(String name):获得Session中的数据
 - removeAttribute(String name):移除Session中的数据
 - getAttributeNames():获得Session中所有数据的绑定名称
+### 设置Session过期时间的方法
+- getMaxInactiveInterval()
+- web.xml文件：可以设置这个工程下所有的Session的过期时间都是xxx分钟
