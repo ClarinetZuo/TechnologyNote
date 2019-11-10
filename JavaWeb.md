@@ -125,3 +125,15 @@ System.out.println("name:" + new String(bookName.getBytes("ISO-8859-1"),"UTF-8")
 ### 设置Session过期时间的方法
 - getMaxInactiveInterval()
 - web.xml文件：可以设置这个工程下所有的Session的过期时间都是xxx分钟
+### 最佳实践
+- 用户登录：将用户的信息存到Session中；如果想解决不同用户的Session过期时间不同，可以在数据库那张表中添加session字段，设置不同的值，在登陆时设置即可。
+- 购物车
+## Cookie
+- Cookie中可以存储少量的信息；Cookie是由服务端向客户端(Browser)发送的信息，浏览器获得这个信息后，再自动传回给服务器
+- Cookie可以做会话跟踪；还可以做购物车，自动登录等等
+### 如何操作Cookie
+- 创建Cookie；名；值；maxAge=-1(同浏览器存活时间相同)
+- 向客户端(Browser)发送Cookie；response.addCookie();
+- 从客户端接收Cookie，request.getCookies();
+### Cookie和Session的关系
+#### Cookie是实现Session跟踪的一种方式
