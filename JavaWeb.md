@@ -129,7 +129,7 @@ System.out.println("name:" + new String(bookName.getBytes("ISO-8859-1"),"UTF-8")
 - 用户登录：将用户的信息存到Session中；如果想解决不同用户的Session过期时间不同，可以在数据库那张表中添加session字段，设置不同的值，在登陆时设置即可。
 - 购物车
 ## Cookie
-- Cookie中可以存储少量的信息；Cookie是由服务端向客户端(Browser)发送的信息，浏览器获得这个信息后，再自动传回给服务器
+- Cookie中可以存储少量的信息；Cookie是由服务端向客m户端(Browser)发送的信息，浏览器获得这个信息后，再自动传回给服务器
 - Cookie可以做会话跟踪；还可以做购物车，自动登录等等
 ### 如何操作Cookie
 - 创建Cookie；名；值；maxAge=-1(同浏览器存活时间相同)
@@ -137,3 +137,26 @@ System.out.println("name:" + new String(bookName.getBytes("ISO-8859-1"),"UTF-8")
 - 从客户端接收Cookie，request.getCookies();
 ### Cookie和Session的关系
 #### Cookie是实现Session跟踪的一种方式
+## ServletContext
+- 是Servlet上下文对象
+- 通过它，我们可以访问web容器；每个应用只有一个ServletContext对象，这个对象可以被所有的Servlet共享
+### ServletContext的方法也分为两类
+#### 1. 存储数据
+- setAttribute()
+- getAttribute()
+- removeAttribute()
+- getAttributeNames()
+#### 2. 与容器通信的
+- getRealPath():将虚拟路径转换成一个真实路径
+- getContextPath():当前应用的路径
+### 如何获得ServletContext
+```Java
+// 获得上下文的两种方式
+request.getServletContext();
+request.getSession().getServletContext();
+```
+## 作用域对象有三个
+- request：请求结束就失效
+- session：取决于Session的存活时间
+- servletContext：只有一份，与服务器(Tomcat)同生共死，且所有的Servlet共享
+## ServletConfig
