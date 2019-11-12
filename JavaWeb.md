@@ -182,3 +182,23 @@ request.getSession().getServletContext();
 ```Java
 <%= 表达式 %> 在页面中输出一个表达式的结果
 ```
+### JSP指令
+#### JSP指令的作用是告诉JSP容器(Tomcat)如何处理整个JSP文档
+#### JSP指令有三种
+- page指令
+```
+<%@ page 属性名="值" %>
+info:描述信息
+language:语言(默认java)
+contentType:"text/html;charset=UTF-8"
+extends:父类
+import:引入非lang包的类
+session:此页面是否支持Session，默认为true
+buffer:缓冲区的大小
+autoFlush:是否自动刷新
+isThreadSafe:是否线程安全
+errorPage:
+isErrorPage:
+```
+- include指令
+- taglib指令
