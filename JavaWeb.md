@@ -160,3 +160,25 @@ request.getSession().getServletContext();
 - session：取决于Session的存活时间
 - servletContext：只有一份，与服务器(Tomcat)同生共死，且所有的Servlet共享
 ## ServletConfig
+### 就是Servlet的一些配置，在web.xml中配置，或者在Annotation中配置，然后再init(ServletConfig config)中得到
+---
+## JSP(Java Server Page)
+### 本质上来说，JSP就是一个Servlet，但看上去更像html，JSP更适合编写服务端运行的页面
+**我的jsp对应的.java文件存放在C:\Users\ClarinetZuo\.IntelliJIdea2019.1\system\tomcat\Unnamed_JavaWebLearn_2\work\Catalina\localhost\JavaWebLearn_war_exploded\org\apache\jsp**
+### JSP注释
+- html注释 <!-- html注释 -- >
+- 隐藏注释(JSP->Servlet时，消失) <%-- 隐藏注释 --%>
+### 脚本元素
+#### 就是如何在JSP中插入Java代码
+- 声明
+```Java
+<%! 声明属性或方法； %> 声明属性和方法
+```
+- 代码段
+```Java
+<% Java 代码 %> 这里的Java代码是放在生成的Servlet的service方法中
+```
+- 表达式
+```Java
+<%= 表达式 %> 在页面中输出一个表达式的结果
+```
