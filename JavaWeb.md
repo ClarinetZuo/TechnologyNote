@@ -201,4 +201,16 @@ errorPage:
 isErrorPage:
 ```
 - include指令
+```
+<%@include%>
+```
 - taglib指令
+```
+<%@ taglib%> 可以使用第三方的标签
+```
+### JSP的内置对象
+#### 内置对象也被称为隐式对象，内置对象就是不用定义，可以直接使用的对象
+#### JSP的9个内置对象
+- out,response
+- page,request,session,application
+- config,exception,pageContext
