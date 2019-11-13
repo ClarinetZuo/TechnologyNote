@@ -214,3 +214,25 @@ isErrorPage:
 - out,response
 - page,request,session,application
 - config,exception,pageContext
+#### JSP的作用域对象
+- page:当前页面
+- request:当次请求
+- session:当次会话
+- application:应用
+#### pageContext对象
+- 页面的上下文对象，通过此对象可以对四个作用域对象进行操作
+- 还可以实现页面的转发
+- forward和sendRedirect的区别：前者是一次请求，sendRedirect是两次请求；forward只能在服务器内部转发，sendRedirect可以重定向到任何资源；forward时地址栏不变，sendRedirect地址栏发生变化
+- include指令和include方法的区别：指令最终生成一个Servlet文件，include方法生成两个Servlet文件，外部Servlet调用内部的Servlet
+- 重定向的状态码是302
+#### 在Servlet中转发请求
+```Java
+RequestDispatcher requestDispatcher = req.getRequestDispatcher("bookList.jsp");
+requestDispatcher.forward(req,resp);
+```
+### EL表达式
+#### EL：Expression Language(表达式语言)
+#### 作用：在JSP中通过一个简单的表达式来操作各作用域对象的数据
+#### 语法
+- ${el表达式}：从page作用域开始查找对象，page -> request -> session -> application，如果都没有，返回null；如果只想在某个作用域查找，可以使用pageScope.xxx
+- .或者[]：访问属性
