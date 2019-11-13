@@ -235,4 +235,5 @@ requestDispatcher.forward(req,resp);
 #### 作用：在JSP中通过一个简单的表达式来操作各作用域对象的数据
 #### 语法
 - ${el表达式}：从page作用域开始查找对象，page -> request -> session -> application，如果都没有，返回null；如果只想在某个作用域查找，可以使用pageScope.xxx
-- .或者[]：访问属性
+- .：访问属性
+- []：可以获得数据的元素或者属性
