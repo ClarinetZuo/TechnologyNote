@@ -237,3 +237,34 @@ requestDispatcher.forward(req,resp);
 - ${el表达式}：从page作用域开始查找对象，page -> request -> session -> application，如果都没有，返回null；如果只想在某个作用域查找，可以使用pageScope.xxx
 - .：访问属性
 - []：可以获得数据的元素或者属性
+- 如果使用EL表达式来获取对象的属性值时，实际调用的是getXxx()方法，而不是属性本身
+```Java
+${sessionScope.book.bookName} -> book.getBookName()
+```
+- ${empty book.bookName} 返回bookName这个属性是否为null或者空
+#### JSTL(JSP Standard Tag Library)
+- c:核心标记
+- fmt:格式化
+- sql
+- xml
+- fn
+##### 使用方法
+- 使用<%@ taglib %> 来导入标记
+```Java
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+```
+- 使用标记
+```Java
+<!-- out -->
+<c:out value="${book.isbn}" default="没有编号"></c:out>
+<!-- 多分支 -->
+<c:choose>
+    <c:when test="${book.price > 50}">
+        这本书的价格大于50元
+    </c:when>
+    <c:otherwise>
+        两个分支
+    </c:otherwise>
+
+</c:choose>
+```
