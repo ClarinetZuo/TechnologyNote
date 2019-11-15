@@ -268,3 +268,27 @@ ${sessionScope.book.bookName} -> book.getBookName()
 
 </c:choose>
 ```
+- forEach标记
+	- 作用：从集合(数组，迭代器，枚举器，Collection，Map，String)中遍历数据
+	- 属性有：
+    	- items:需要遍历的集合，使用el表达式
+    	- var:每次遍历到的元素的变量名
+    	- begin:起始位置
+    	- end:结束位置
+    	- step:每次遍历的步长
+    	- varStatus:用来存储遍历到的那个元素的相关信息(下标、计数、是否是最后一个、是否是第一个等信息)
+```Java
+<c:forEach items="${set}" var="setEle" varStatus="state">
+    <tr>
+        <td>${state.index}</td>
+        <td>${setEle.isbn}</td>
+        <td>${setEle.bookName}</td>
+        <td>${setEle.price}</td>
+        <td>操作</td>
+    </tr>
+</c:forEach>
+```
+- 日期格式化
+```Java
+<fmt:formatDate value="${date}" pattern="yyyy-MM-dd HH:mm:ss"/>
+```
