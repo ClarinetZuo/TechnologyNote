@@ -277,6 +277,8 @@ ${sessionScope.book.bookName} -> book.getBookName()
     	- end:结束位置
     	- step:每次遍历的步长
     	- varStatus:用来存储遍历到的那个元素的相关信息(下标、计数、是否是最后一个、是否是第一个等信息)
+    	- index:索引，从0开始
+    	- count:第几个，从1开始
 ```Java
 <c:forEach items="${set}" var="setEle" varStatus="state">
     <tr>
@@ -292,3 +294,18 @@ ${sessionScope.book.bookName} -> book.getBookName()
 ```Java
 <fmt:formatDate value="${date}" pattern="yyyy-MM-dd HH:mm:ss"/>
 ```
+---
+## MVC设计模式
+### M
+#### Model
+- 处理业务逻辑；Dao，Service...
+### V
+#### View
+- 展示数据(与用户交互)；JSP
+### C
+#### Controller
+- 控制调试(获得用户数据，调用Model，请求转发或者重定向给View)；Servlet
+### MVC的优点
+- 维护性好(修改任何一部分不会影响到其他部分)
+- 更利于分工合作
+- 更利于代码复用
