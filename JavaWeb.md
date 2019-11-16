@@ -309,3 +309,11 @@ ${sessionScope.book.bookName} -> book.getBookName()
 - 维护性好(修改任何一部分不会影响到其他部分)
 - 更利于分工合作
 - 更利于代码复用
+---
+## Filter
+### Filter是一个在请求之前和响应之后执行过滤任务的对象
+### Filter的生命周期
+- 实例化
+- init()，只执行一次
+- doFilter()，被调用多次
+- destroy()，只执行一次
