@@ -129,7 +129,7 @@ System.out.println("name:" + new String(bookName.getBytes("ISO-8859-1"),"UTF-8")
 - 用户登录：将用户的信息存到Session中；如果想解决不同用户的Session过期时间不同，可以在数据库那张表中添加session字段，设置不同的值，在登陆时设置即可。
 - 购物车
 ## Cookie
-- Cookie中可以存储少量的信息；Cookie是由服务端向客m户端(Browser)发送的信息，浏览器获得这个信息后，再自动传回给服务器
+- Cookie中可以存储少量的信息；Cookie是由服务端向客户端(Browser)发送的信息，浏览器获得这个信息后，再自动传回给服务器
 - Cookie可以做会话跟踪；还可以做购物车，自动登录等等
 ### 如何操作Cookie
 - 创建Cookie；名；值；maxAge=-1(同浏览器存活时间相同)
@@ -317,3 +317,6 @@ ${sessionScope.book.bookName} -> book.getBookName()
 - init()，只执行一次
 - doFilter()，被调用多次
 - destroy()，只执行一次
+### 如何开发一个Filter
+- 定义一个Filter类；实现doFilter()方法
+- 配置映射：/admin/ *.do
