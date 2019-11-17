@@ -320,3 +320,14 @@ ${sessionScope.book.bookName} -> book.getBookName()
 ### 如何开发一个Filter
 - 定义一个Filter类；实现doFilter()方法
 - 配置映射：/admin/ *.do
+---
+## Listener(监听器)
+### 监听各作用域对象(request,session,application)的变化，可以监听每个对象的两个行为
+- 生命周期(create,destroy)
+- 属性的改变(add,remove,replace)
+### Listener常用的接口
+#### Session
+- HttpSessionListener
+  - sessionCreated(HttpSessionEvent se)
+  - sessionDestroyed(HttpSessionEvent se)
+- HttpSessionAttributeListener
