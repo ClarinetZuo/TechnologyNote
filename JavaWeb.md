@@ -331,3 +331,12 @@ ${sessionScope.book.bookName} -> book.getBookName()
   - sessionCreated(HttpSessionEvent se)
   - sessionDestroyed(HttpSessionEvent se)
 - HttpSessionAttributeListener
+  - attributeAdded(HttpSessionBindingEvent sbe)
+  - attributeRemoved(HttpSessionBindingEvent sbe)
+  - attributeReplaced(HttpSessionBindingEvent sbe)
+- ServletContext
+  - ServletContextListener
+  - ServletContextAttributeListener
+#### case
+- 统计在线人数
+- 统计登录人数及人名
