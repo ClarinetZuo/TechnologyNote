@@ -339,4 +339,23 @@ ${sessionScope.book.bookName} -> book.getBookName()
   - ServletContextAttributeListener
 #### case
 - 统计在线人数
-- 统计登录人数及人名
+- 统计登录人数及人名;
+---
+## 分页
+### 查询结果只包含当页的数据
+```sql
+select * from tb_book limit 10,10;
+```
+### 查询出记录总数
+```sql
+select count(*) from tb_book;
+```
+### 开发分页功能
+#### 定义一个分页信息类(PageInfo)，此类封装了所有的分页数据，包括List，当前页，总页数，总记录数，URL
+```Java
+request.setAttribute("page",pageInfo)
+```
+---
+## xml(Extensible Markup Language)
+### xml的主要用途
+- 存储数据
