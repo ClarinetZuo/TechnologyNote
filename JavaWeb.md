@@ -359,3 +359,42 @@ request.setAttribute("page",pageInfo)
 ## xml(Extensible Markup Language)
 ### xml的主要用途
 - 存储数据
+- 配置文件(properties,annotation)
+- 数据交换(WebService底层就用了xml，json前后端交互)
+### xml语法
+#### 结构
+- 声明
+```xml
+<?xml version="1.0" encoding="UTF-8">
+```
+- 定义
+- 注释
+```xml
+<!-- -->
+```
+- 内容
+```xml
+<根标记>
+	<各种标记>
+		...
+	</各种标记>
+</根标记>
+```
+### xml的有效性
+- 结构良好：符合xml语法规范要求的
+- 有效的：符合验证文件要求的(待验证的)
+### 实体(以&开始,;结尾)
+- lt <
+- gt >
+- amp &
+- apos '
+- quot "
+### CDATA节
+#### CDATA节中的内容会被xml所忽略，不被当做xml内容来进行解析
+```xml
+<![CDATA[
+	我是一个java代码
+	int a = b<<c;
+]]>
+```
+### DTD(Document Type Defination)文件
