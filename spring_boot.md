@@ -50,3 +50,5 @@ person:
 ### 读取配置文件的两种方式
 - @Value(): "${}" 等等
 - @ConfigurationProperties(prefix="xxx")
+## SpringBoot中的多配置文件
+### 可以在resources包下增加不同的properties配置文件，配置文件的名称是application-[prod].properties，然后再application.properties文件中，spring.profiles.active=prod，来激活对应的配置文件
