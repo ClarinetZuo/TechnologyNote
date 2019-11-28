@@ -15,7 +15,7 @@
 - 代表被注解的类是boot的配置类，是boot应用的入口；这个注解主要由三个注解组成
   - @SpringBootConfiguration：boot配置类
   - @EnableAutoConfiguration：开启自动扫描包
-  - @ComponentScan:
+  - @ComponentScan:扫描包
 ## Spring的三种配置方式
 ### xml < bean id="" class="">
 ### Annotation;@Component @Autowired
@@ -30,3 +30,23 @@ public UserService getUserService(){
 }
 }
 ```
+## SpringBoot的目录结构
+### 多了一个resources包
+- static：静态文件
+- template：模板 thymeleaf
+- application.properties
+## SpringBoot的配置文件
+### 属性文件(application.properties)
+### yml(yaml)文件
+#### 文件格式：键值对，注意空格
+```yml
+person:
+  name: 左俊皓
+  age: 25
+  hobbies: ["干","起","来"] // 数组
+  birth: 1994/6/10 // 日期
+  map: {"java":100,"Hadoop":100} // map
+```
+### 读取配置文件的两种方式
+- @Value(): "${}" 等等
+- @ConfigurationProperties(prefix="xxx")
