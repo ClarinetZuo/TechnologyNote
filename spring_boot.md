@@ -52,3 +52,23 @@ person:
 - @ConfigurationProperties(prefix="xxx")
 ## SpringBoot中的多配置文件
 ### 可以在resources包下增加不同的properties配置文件，配置文件的名称是application-[prod].properties，然后再application.properties文件中，spring.profiles.active=prod，来激活对应的配置文件
+### 可以使用yml文档块的方式
+```yml
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+server:
+  port: 8888
+  servlet:
+    context-path: /dev
+---
+spring:
+  profiles: test
+server:
+  port: 9999
+  servlet:
+    context-path: 9999
+```
