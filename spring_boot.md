@@ -72,3 +72,68 @@ server:
   servlet:
     context-path: 9999
 ```
+## SpringBoot的模板引擎
+### 根据模板和数据生成指定的文件
+### 常见的模板引擎有
+- Velocity
+- FreeMarker
+- Thymeleaf
+### 使用Thymeleaf的步骤
+- 导入Thymeleaf启动器
+```xml
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-thymeleaf</artifactId>
+</dependency>
+```
+- 在resources/templates/目录中添加模板(success.html...)
+```html
+<!DOCTYPE html>
+<!-- 导入命名空间-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        <input type="text" th:value="${name}"/><br/>
+        <input type="text" th:value="${age}"/><br/>
+        <input type="text" th:value="${sex}"/><br/>
+    </form>
+</body>
+</html>
+```
+- 在Controller中返回一个代表模板名称的字符串
+```Java
+package com.example.webdemo.mvc;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Arrays;
+import java.util.Map;
+
+/**
+ * author:Zuo Junhao
+ * NEFU
+ */
+@Controller
+public class TestHandler {
+    @RequestMapping("/show")
+    public String showInfo(Map<String,Object> map){
+        map.put("name","zjh");
+        map.put("age","25");
+        map.put("sex","male");
+        map.put("hobby", Arrays.asList("play","fuck"));
+        return "show";
+    }
+}
+```
+### Thymeleaf的语法
+#### 简单表达式
+- ${...}
+- *{...}
+- #{...}
+- @{...}
+- ~{...}
