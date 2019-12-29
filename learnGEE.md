@@ -29,5 +29,14 @@ Map.addLayer(masked,{'palette':'FF0000'});
 - Export.image.toDrive
 - Export.image.toAsset：存储在Asset里面，可以import进来
 ---
+## Chart
+### 时序图
+```GEE
+ui.Chart.image.series()
+```
+---
 ## 一些遥感英语
 ### spectral signature:光谱特征
+### polygon:多边形
+### tabular data:表格数据
+---
