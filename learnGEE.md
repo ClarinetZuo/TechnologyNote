@@ -40,4 +40,3 @@ ui.Chart.image.series()
 ### polygon:多边形
 ### tabular data:表格数据
 ---
-试试GitHub能不能push
