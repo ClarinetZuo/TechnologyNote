@@ -15,3 +15,7 @@ docker attach 容器id
 docker run -d
 ...
 ```
+## 镜像（images）
+	UnionFS
+	方便共享资源
+	可以通过docker commit -a "" -m "" 创造一个自定义的镜像
