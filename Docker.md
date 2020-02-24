@@ -49,7 +49,7 @@ docker run -it xxx/xxx
 - WORKDIR：登录后的工作目录
 - ENV：设置环境变量
 - ADD：拷贝+解压缩
-- COPY：单纯拷贝
+- COPY：单纯拷贝，宿主机到Docker容器
 - VOLUME：搞数据卷
 - CMD：容器启动时运行的命令，当有多个时，只有最后一个CMD生效，会被docker run 后的参数顶掉
 - ENTRYPOINT：追加到docker run后面
