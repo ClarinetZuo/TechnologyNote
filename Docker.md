@@ -39,3 +39,18 @@ docker run -it xxx/xxx
 ```
 ### 数据卷容器
 	--volumes-from
+## Dockerfile
+	是用来构建Docker镜像的构建文件
+### Dockerfile中的保留字指令(必须大写且后跟参数)
+- FROM：基于哪个镜像
+- MAINTAINER：作者+邮箱
+- RUN：容器构建时需要执行的命令
+- EXPOSE：对外服务的端口号
+- WORKDIR：登录后的工作目录
+- ENV：设置环境变量
+- ADD：拷贝+解压缩
+- COPY：单纯拷贝
+- VOLUME：搞数据卷
+- CMD：容器启动时运行的命令，当有多个时，只有最后一个CMD生效，会被docker run 后的参数顶掉
+- ENTRYPOINT：追加到docker run后面
+- ONBUILD：触发器，子镜像继承父镜像时，父镜像会搞点事情
